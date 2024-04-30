@@ -1,0 +1,104 @@
+.sidepanel {
+  min-height: 100vh;
+  padding: 35px 30px 75px 25px;
+  flex-direction: column;
+  background-color: $white;
+  transition: all 0.3s ease-in;
+  z-index: 1;
+  @media (max-width: 1200px) {
+    padding: 35px 10px 75px 10px;
+  }
+
+  &__header {
+    margin-bottom: 50px;
+    align-items: center;
+    gap: 5px;
+    &__logo {
+      width: 44px;
+      height: 37px;
+    }
+    &__title {
+      color: $black;
+      font: $h1-font;
+      @media (max-width: 1200px) {
+        font: $h3-font;
+      }
+      span {
+        margin-left: 6px;
+        font: $h8-font;
+        color: $gray;
+      }
+    }
+  }
+  &__nav {
+    margin-bottom: 20px;
+    ul:not(:first-child) {
+      margin-top: 40px;
+    }
+    li {
+      align-items: center;
+      padding: 12px 15px 10px;
+      margin-bottom: 18px;
+      border-radius: 10px;
+      transition: background 0.3s;
+      @media (max-width: 1200px) {
+        max-width: 180px;
+      }
+
+      a {
+        padding-left: 13px;
+        color: $light-blue;
+      }
+      .nav-arrow {
+        position: absolute;
+        right: 6px;
+        stroke: $light-blue;
+      }
+      &:hover {
+        background-color: $bg-blue1;
+        cursor: pointer;
+        & > svg path[stroke] {
+          stroke: $white;
+        }
+        & > svg path[fill] {
+          fill: $white;
+        }
+        a {
+          color: $white;
+        }
+        img {
+          fill: $white;
+        }
+        .nav-arrow {
+          stroke: $white;
+        }
+      }
+    }
+  }
+  &__info {
+    margin-top: auto;
+    display: flex;
+    justify-content: start;
+    img {
+      width: 42px;
+      height: 42px;
+      margin-right: 10px;
+    }
+    &-name {
+      font: $h5-font;
+      color: $black;
+    }
+    &-position {
+      font: $h6-font;
+      color: $medium-gray;
+    }
+  }
+  @media (max-width: 1023px) {
+    position: absolute;
+    transform: translateX(-100%);
+    .hamburger-trigger:checked ~ & {
+      transform: translateX(0);
+      box-shadow: $shadow 1.95px 1.95px 2.6px;
+    }
+  }
+}

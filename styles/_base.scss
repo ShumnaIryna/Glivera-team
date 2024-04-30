@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: $dark;
+  margin: 0;
+  background-color: $bg;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: none;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  list-style: none;
+}
+
+button {
+  border-style: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.d-f {
+  display: flex;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 306px auto;
+  @media (max-width: 1200px) {
+    grid-template-columns: 250px auto;
+  }
+  @media (max-width: 1023px) {
+    display: block;
+  }
+}
+
+.hamburger,
+.hamburger-trigger {
+  position: absolute;
+  left: 17px;
+  display: none;
+  width: 30px;
+  cursor: pointer;
+  @media (max-width: 1023px) {
+    display: block;
+  }
+}
+.hamburger-trigger {
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  top: 10px;
+  opacity: 0;
+  z-index: 3;
+}
+.hamburger {
+  height: 3px;
+  top: 23px;
+  background: $black;
+  z-index: 2;
+  &::after,
+  &::before {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: $black;
+    content: "";
+  }
+  &::after {
+    top: 8px;
+  }
+  &::before {
+    top: -8px;
+  }
+  .hamburger-trigger:checked ~ & {
+    background: none;
+    &::after {
+      top: -2px;
+      transform: rotate(-45deg);
+    }
+    &::before {
+      top: -2px;
+      transform: rotate(45deg);
+    }
+  }
+}

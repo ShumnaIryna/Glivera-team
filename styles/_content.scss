@@ -1,0 +1,224 @@
+.content {
+  padding: 40px 130px 80px 70px;
+  &__title {
+    margin-bottom: 52px;
+    font: $h2-font;
+    color: $black;
+  }
+  @media (max-width: 1230px) {
+    padding: 50px 20px 80px 20px;
+  }
+}
+.customers {
+  padding: 0 55px 0 38px;
+  background: $white;
+  border-radius: 30px;
+  &__filter {
+    padding: 30px 0 39px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 1200px) {
+      padding: 25px 0 15px 0;
+    }
+    @media (max-width: 477px) {
+      flex-wrap: wrap;
+    }
+  }
+  &__left {
+    display: flex;
+    flex-direction: column;
+
+    &--all {
+      margin-bottom: 7px;
+      padding: 0;
+      text-align: justify;
+      font: $h3-font;
+      color: $black;
+      background-color: transparent;
+    }
+    &--active {
+      padding: 0;
+      text-align: justify;
+      font: $h5-font;
+      color: $turquoise-btn;
+      background-color: transparent;
+    }
+  }
+  &__right {
+    min-width: 216px;
+    @media (max-width: 477px) {
+      margin-top: 10px;
+    }
+    svg {
+      position: absolute;
+      left: 10px;
+      top: 6px;
+    }
+    input {
+      padding: 10px 10px 10px 40px;
+      border: none;
+      background-color: $bg-blue2;
+      border-radius: 10px;
+      font: $h6-font;
+      color: $light-gray;
+      text-align: start;
+    }
+  }
+  &__numbering {
+    padding: 26px 35px 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 670px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+  &__text {
+    font: $h4-font;
+    color: $light-gray;
+  }
+}
+
+.paginator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 270px;
+  a {
+    cursor: pointer;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: baseline;
+    width: 100%;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  &__item {
+    display: inline-block;
+    min-width: 25px;
+    min-height: 25px;
+    border-radius: 4px;
+    text-align: center;
+    background-color: $bg-gray;
+    border: 1px solid $light-gray2;
+    cursor: pointer;
+    &--active {
+      background-color: $bg-blue1;
+      border: 1px solid $bg-blue1;
+      a {
+        color: $white;
+      }
+    }
+    &--dots {
+      background-color: transparent;
+      border: none;
+    }
+    &:hover {
+      background-color: $bg-blue1;
+      border: 1px solid $bg-blue1;
+      a {
+        color: $white;
+      }
+    }
+  }
+  &__link {
+    color: $dark-gray;
+    font: $h7-font;
+  }
+}
+
+.customers-list {
+  width: 100%;
+  border-collapse: collapse;
+  @media (max-width: 1046px) {
+    padding: 0px 10px 0px 10px;
+  }
+  thead {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  tr {
+    @media (max-width: 767px) {
+      display: block;
+    }
+  }
+  td {
+    @media (max-width: 767px) {
+      display: block;
+      text-align: right;
+      &::before {
+        content: attr(data-label);
+        float: left;
+        color: $light-gray;
+      }
+    }
+  }
+  &__title {
+    position: relative;
+    padding-bottom: 13px;
+    padding-right: 5px;
+    font: $h4-font;
+    color: $light-gray;
+    border-bottom: 1px solid $light-gray2;
+    text-align: start;
+    &:first-child::before,
+    &:last-child::after {
+      content: "";
+      position: absolute;
+      border-bottom: 1px solid $light-gray2;
+      bottom: -1px;
+    }
+    &:first-child::before {
+      left: 0;
+      width: 38px;
+      transform: translateX(-100%);
+    }
+    &:last-child::after {
+      right: 0;
+      width: 55px;
+      transform: translateX(100%);
+    }
+    @media (max-width: 1046px) {
+      align-content: flex-start;
+    }
+  }
+  &__item {
+    @media (max-width: 767px) {
+      td:first-child {
+        border-top: 2px solid $dark;
+      }
+    }
+    td {
+      padding: 19px 10px 19px 0;
+      font: $h4-font;
+      color: $dark;
+      border-bottom: 1px solid $light-gray2;
+      @media (max-width: 1046px) {
+        padding: 20px 5px 20px 5px;
+      }
+    }
+  }
+  &__btn {
+    width: 80px;
+    height: 30px;
+    border-radius: 4px;
+    &--active {
+      border: 1px solid $br-green;
+      background-color: $turquoise;
+      color: $green;
+    }
+    &--inactive {
+      border: 1px solid $red;
+      background-color: $bg-red;
+      color: $red;
+    }
+  }
+}
